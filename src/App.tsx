@@ -7,6 +7,7 @@ import { QuestionType } from './Types/quiz_types'
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import galaxy from './../src/galaxy.png';
+import { swDev } from './swDev';
 
 const useStyles = makeStyles((theme) => ({
   App:{
@@ -41,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function App() {
+  swDev();
   const classes = useStyles();
   const [quiz, setQuiz] = useState<QuestionType[]>([])
   let [currentStep, setcurrentStep] = useState(0)
