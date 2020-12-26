@@ -7,7 +7,8 @@ import { QuestionType } from './Types/quiz_types'
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import galaxy from './../src/galaxy.png';
-
+import { swDev } from './swDev';
+import {initNotifications} from './firebaseNotifications'
 const useStyles = makeStyles((theme) => ({
   App:{
     backgroundImage:`url(${galaxy})`,
@@ -41,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function App() {
+  swDev();
+  initNotifications();
+  
   const classes = useStyles();
   const [quiz, setQuiz] = useState<QuestionType[]>([])
   let [currentStep, setcurrentStep] = useState(0)
